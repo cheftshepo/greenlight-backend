@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-02-17T10:03:54.892269",
+  "environment_vars": {
+    "AZURE_STORAGE_CONNECTION_STRING": "PRESENT",
+    "AZURE_STORAGE_ACCOUNT_KEY": "PRESENT",
+    "AZURE_STORAGE_CONTAINER": "PRESENT",
+    "AZURE_STORAGE_ACCOUNT_NAME": "MISSING",
+    "AzureWebJobsStorage": "PRESENT"
+  },
+  "connection_tests": {
+    "connection_string": {
+      "success": true,
+      "account_name": "stncyncazrdlapoc",
+      "sku": "Standard_RAGRS"
+    },
+    "account_name": "stncyncazrdlapoc",
+    "account_key": {
+      "success": true
+    }
+  },
+  "container_access": {
+    "containers": [
+      "azure-webjobs-hosts",
+      "certificates",
+      "documents"
+    ],
+    "documents": {
+      "exists": true,
+      "public_access": null,
+      "lease_state": null,
+      "has_immutability_policy": false
+    },
+    "error": "Session.request() got an unexpected keyword argument 'max_results'"
+  },
+  "sas_generation": {},
+  "blob_access": {},
+  "cors_config": {
+    "rules": [],
+    "error": "'CorsRule' object has no attribute 'get'"
+  },
+  "recommendations": [
+    "Set AZURE_STORAGE_ACCOUNT_NAME in environment variables",
+    "Upload a test document to verify blob access",
+    "Add CORS rule for http://localhost:3000"
+  ]
+}

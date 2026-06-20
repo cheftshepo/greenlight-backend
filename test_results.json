@@ -1,0 +1,363 @@
+{
+  "timestamp": "2026-02-05T09:58:05.543079",
+  "summary": {
+    "total": 45,
+    "passed": 2,
+    "failed": 43,
+    "skipped": 0
+  },
+  "results": [
+    {
+      "test": "Health Check",
+      "endpoint": "GET /health",
+      "status": 200,
+      "expected": 200,
+      "success": true,
+      "timestamp": "2026-02-05T09:57:20.184209"
+    },
+    {
+      "test": "CORS Preflight",
+      "endpoint": "OPTIONS /CORS",
+      "status": 204,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:20.194124"
+    },
+    {
+      "test": "Get Jurisdictions",
+      "endpoint": "GET /jurisdictions",
+      "status": 200,
+      "expected": 200,
+      "success": true,
+      "timestamp": "2026-02-05T09:57:20.282655"
+    },
+    {
+      "test": "Get Current User",
+      "endpoint": "GET /auth/me",
+      "status": 500,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:27.330623"
+    },
+    {
+      "test": "Get User Profile",
+      "endpoint": "GET /users/profile",
+      "status": 500,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:28.231487"
+    },
+    {
+      "test": "Update Profile",
+      "endpoint": "PUT /users/profile",
+      "status": 500,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:29.050379"
+    },
+    {
+      "test": "Legal Queue",
+      "endpoint": "GET /legal/queue",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:31.098584"
+    },
+    {
+      "test": "Legal Advisory Dashboard",
+      "endpoint": "GET /legal/advisory",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:32.020126"
+    },
+    {
+      "test": "Create Team",
+      "endpoint": "POST /teams",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:32.838877"
+    },
+    {
+      "test": "List Teams",
+      "endpoint": "GET /teams",
+      "status": 500,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:33.867368"
+    },
+    {
+      "test": "My Teams Queue",
+      "endpoint": "GET /teams/my-queue",
+      "status": 500,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:34.785281"
+    },
+    {
+      "test": "List Users",
+      "endpoint": "GET /manage/users",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:35.780249"
+    },
+    {
+      "test": "Invite User",
+      "endpoint": "POST /manage/users/invite",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:36.684838"
+    },
+    {
+      "test": "Get User",
+      "endpoint": "GET /manage/users/user123",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:37.962133"
+    },
+    {
+      "test": "Update User",
+      "endpoint": "PUT /manage/users/user123",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:38.982939"
+    },
+    {
+      "test": "Update Role",
+      "endpoint": "PUT /manage/users/user123/role",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:39.825506"
+    },
+    {
+      "test": "User Activity",
+      "endpoint": "GET /manage/users/user123/activity",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:40.828356"
+    },
+    {
+      "test": "User Decisions",
+      "endpoint": "GET /manage/users/user123/decisions",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:41.561180"
+    },
+    {
+      "test": "Org Overview",
+      "endpoint": "GET /manage/overview",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:42.671032"
+    },
+    {
+      "test": "Workload Dashboard",
+      "endpoint": "GET /manage/users/workload",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:43.780901"
+    },
+    {
+      "test": "Deactivate User",
+      "endpoint": "DELETE /manage/users/user123",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:44.669185"
+    },
+    {
+      "test": "List Workflows",
+      "endpoint": "GET /workflows",
+      "status": 500,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:45.741858"
+    },
+    {
+      "test": "Create Workflow",
+      "endpoint": "POST /workflows",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:46.520891"
+    },
+    {
+      "test": "Pending Approvals",
+      "endpoint": "GET /workflows/pending-approvals",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:47.306399"
+    },
+    {
+      "test": "Analytics Dashboard",
+      "endpoint": "GET /analytics/dashboard",
+      "status": 500,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:48.135188"
+    },
+    {
+      "test": "Compliance Score",
+      "endpoint": "GET /analytics/compliance-score",
+      "status": 500,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:49.075365"
+    },
+    {
+      "test": "User Performance",
+      "endpoint": "GET /analytics/user-performance",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:49.899084"
+    },
+    {
+      "test": "Violation Trends",
+      "endpoint": "GET /analytics/violation-trends",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:50.624160"
+    },
+    {
+      "test": "AI Overrides",
+      "endpoint": "GET /analytics/ai-overrides",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:51.475384"
+    },
+    {
+      "test": "SLA Compliance",
+      "endpoint": "GET /analytics/sla-compliance",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:52.500134"
+    },
+    {
+      "test": "Search Audit",
+      "endpoint": "GET /audit/search",
+      "status": 500,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:53.320354"
+    },
+    {
+      "test": "Export Audit",
+      "endpoint": "GET /audit/export",
+      "status": 500,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:54.343753"
+    },
+    {
+      "test": "Create Rule",
+      "endpoint": "POST /custom-rules",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:55.366134"
+    },
+    {
+      "test": "List Rules",
+      "endpoint": "GET /custom-rules",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:56.389573"
+    },
+    {
+      "test": "Admin Rules",
+      "endpoint": "GET /manage/rules",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:57.416393"
+    },
+    {
+      "test": "Get SLA",
+      "endpoint": "GET /settings/sla",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:58.270439"
+    },
+    {
+      "test": "Update SLA",
+      "endpoint": "PUT /settings/sla",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:57:59.376837"
+    },
+    {
+      "test": "SLA Dashboard",
+      "endpoint": "GET /sla/dashboard",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:58:00.216004"
+    },
+    {
+      "test": "Platform Usage",
+      "endpoint": "GET /platform/usage",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:58:01.305164"
+    },
+    {
+      "test": "Platform Orgs",
+      "endpoint": "GET /platform/organizations",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:58:02.255592"
+    },
+    {
+      "test": "Platform Settings",
+      "endpoint": "GET /platform/settings",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:58:03.026032"
+    },
+    {
+      "test": "Update Platform Settings",
+      "endpoint": "PUT /platform/settings",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:58:03.937848"
+    },
+    {
+      "test": "ML Export",
+      "endpoint": "GET /ml/training-data",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:58:04.787484"
+    },
+    {
+      "test": "Admin Teams",
+      "endpoint": "GET /manage/teams",
+      "status": 403,
+      "expected": 200,
+      "success": false,
+      "timestamp": "2026-02-05T09:58:05.542531"
+    }
+  ]
+}

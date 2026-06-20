@@ -1,0 +1,9 @@
+'local.settings.json' found in root directory (/home/tshepo/Desktop/matt-murdock).
+Resolving worker runtime to 'python'.
+Found Python version 3.11.14 (python3).
+
+
+Azure Functions Core Tools
+Core Tools Version:       4.5.0+e74aae22c9630777c9f58354f290a6e214218546 (64-bit)
+Function Runtime Version: 4.1044.400.25520
+

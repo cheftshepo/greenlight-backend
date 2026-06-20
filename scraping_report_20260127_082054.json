@@ -1,0 +1,684 @@
+{
+  "summary": {
+    "start_time": "2026-01-27T07:58:12.418849",
+    "end_time": "2026-01-27T08:20:54.391628",
+    "duration_minutes": 22.7,
+    "total_sources": 40,
+    "sources_attempted": 40,
+    "sources_succeeded": 20,
+    "sources_failed": 20,
+    "success_rate": 50.0,
+    "total_regulations": 176,
+    "total_saved": 176,
+    "total_indexed": 176,
+    "duplicates_removed": 0
+  },
+  "by_jurisdiction": {
+    "AU": {
+      "sources_total": 4,
+      "sources_succeeded": 1,
+      "sources_failed": 3,
+      "regulations_scraped": 3,
+      "regulations_saved": 3,
+      "regulations_indexed": 3
+    },
+    "DE": {
+      "sources_total": 3,
+      "sources_succeeded": 2,
+      "sources_failed": 1,
+      "regulations_scraped": 12,
+      "regulations_saved": 12,
+      "regulations_indexed": 12
+    },
+    "EU": {
+      "sources_total": 7,
+      "sources_succeeded": 1,
+      "sources_failed": 6,
+      "regulations_scraped": 3,
+      "regulations_saved": 3,
+      "regulations_indexed": 3
+    },
+    "FR": {
+      "sources_total": 4,
+      "sources_succeeded": 4,
+      "sources_failed": 0,
+      "regulations_scraped": 28,
+      "regulations_saved": 28,
+      "regulations_indexed": 28
+    },
+    "GLOBAL": {
+      "sources_total": 2,
+      "sources_succeeded": 2,
+      "sources_failed": 0,
+      "regulations_scraped": 34,
+      "regulations_saved": 34,
+      "regulations_indexed": 34
+    },
+    "UK": {
+      "sources_total": 9,
+      "sources_succeeded": 6,
+      "sources_failed": 3,
+      "regulations_scraped": 69,
+      "regulations_saved": 69,
+      "regulations_indexed": 69
+    },
+    "US": {
+      "sources_total": 7,
+      "sources_succeeded": 3,
+      "sources_failed": 4,
+      "regulations_scraped": 16,
+      "regulations_saved": 16,
+      "regulations_indexed": 16
+    },
+    "ZA": {
+      "sources_total": 4,
+      "sources_succeeded": 1,
+      "sources_failed": 3,
+      "regulations_scraped": 11,
+      "regulations_saved": 11,
+      "regulations_indexed": 11
+    }
+  },
+  "results": [
+    {
+      "jurisdiction": "AU",
+      "source": "AU-ASIC-RG234-PDF",
+      "source_id": "AU-ASIC-RG234-PDF",
+      "url": "https://download.asic.gov.au/media/5994021/rg234-published-15-december-2020.pdf",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 17.05,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "AU",
+      "source": "AU-ASIC-Greenwashing-PAGE",
+      "source_id": "AU-ASIC-Greenwashing-PAGE",
+      "url": "https://asic.gov.au/about-asic/news-centre/find-a-media-release/2022-releases/22-274mr-asic-acts-aga",
+      "status": "success",
+      "regulations_scraped": 3,
+      "regulations_saved": 3,
+      "regulations_indexed": 3,
+      "duration_seconds": 52.48,
+      "success_rate": 100.0,
+      "retry_count": 1,
+      "errors": []
+    },
+    {
+      "jurisdiction": "AU",
+      "source": "AU-ASIC-Greenwashing-PDF",
+      "source_id": "AU-ASIC-Greenwashing-PDF",
+      "url": "https://download.asic.gov.au/media/fnwpn5kv/rep-758-published-20-june-2023.pdf",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 35.97,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "AU",
+      "source": "AU-ASIC-Design-Distribution-PDF",
+      "source_id": "AU-ASIC-Design-Distribution-PDF",
+      "url": "https://download.asic.gov.au/media/5230063/rg274-published-5-october-2020.pdf",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 17.3,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "DE",
+      "source": "DE-BaFin-WpHG-PAGE",
+      "source_id": "DE-BaFin-WpHG-PAGE",
+      "url": "https://www.bafin.de/SharedDocs/Veroeffentlichungen/EN/Fachartikel/2023/fa_bj_2307_MiFID_II_Produktu",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 167.82,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "DE",
+      "source": "DE-BaFin-Advertising-PAGE",
+      "source_id": "DE-BaFin-Advertising-PAGE",
+      "url": "https://www.bafin.de/SharedDocs/Veroeffentlichungen/EN/Meldung/2021/meldung_2021_03_01_werbung_fuer_",
+      "status": "success",
+      "regulations_scraped": 11,
+      "regulations_saved": 11,
+      "regulations_indexed": 11,
+      "duration_seconds": 42.85,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    },
+    {
+      "jurisdiction": "DE",
+      "source": "DE-BaFin-Sustainability-PAGE",
+      "source_id": "DE-BaFin-Sustainability-PAGE",
+      "url": "https://www.bafin.de/EN/Aufsicht/Themen/Nachhaltige-Finanzen/nachhaltige-finanzen_node_en.html",
+      "status": "success",
+      "regulations_scraped": 1,
+      "regulations_saved": 1,
+      "regulations_indexed": 1,
+      "duration_seconds": 43.31,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    },
+    {
+      "jurisdiction": "EU",
+      "source": "EU-MiFID-II-PDF",
+      "source_id": "EU-MiFID-II-PDF",
+      "url": "https://www.esma.europa.eu/sites/default/files/library/2015/11/2014-1569_-_guidelines_on_mifid_ii_pr",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 18.74,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "EU",
+      "source": "EU-MiFID-II-PDF",
+      "source_id": "EU-MiFID-II-PDF",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32017R0565",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 17.41,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "EU",
+      "source": "EU-PRIIPs-KID-PDF",
+      "source_id": "EU-PRIIPs-KID-PDF",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32014R1286",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 15.71,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "EU",
+      "source": "EU-SFDR-ESG-PDF",
+      "source_id": "EU-SFDR-ESG-PDF",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32019R2088",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 15.68,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "EU",
+      "source": "EU-SFDR-ESG-PDF",
+      "source_id": "EU-SFDR-ESG-PDF",
+      "url": "https://www.esma.europa.eu/sites/default/files/2023-05/ESMA34-472-373_Final_Report_on_Guidelines_on_",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 15.83,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "EU",
+      "source": "EU-MiCA-Crypto-PDF",
+      "source_id": "EU-MiCA-Crypto-PDF",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1114",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 15.71,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "EU",
+      "source": "EU-UCITS-PAGE",
+      "source_id": "EU-UCITS-PAGE",
+      "url": "https://www.esma.europa.eu/document/guidelines-ucits-etfs-and-other-ucits-issues",
+      "status": "success",
+      "regulations_scraped": 3,
+      "regulations_saved": 3,
+      "regulations_indexed": 3,
+      "duration_seconds": 39.23,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    },
+    {
+      "jurisdiction": "FR",
+      "source": "FR-AMF-Marketing-PAGE",
+      "source_id": "FR-AMF-Marketing-PAGE",
+      "url": "https://www.amf-france.org/en/regulation/policy/doc-2020-05",
+      "status": "success",
+      "regulations_scraped": 11,
+      "regulations_saved": 11,
+      "regulations_indexed": 11,
+      "duration_seconds": 38.77,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    },
+    {
+      "jurisdiction": "FR",
+      "source": "FR-AMF-ESG-PAGE",
+      "source_id": "FR-AMF-ESG-PAGE",
+      "url": "https://www.amf-france.org/en/regulation/policy/doc-2022-01",
+      "status": "success",
+      "regulations_scraped": 3,
+      "regulations_saved": 3,
+      "regulations_indexed": 3,
+      "duration_seconds": 59.13,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    },
+    {
+      "jurisdiction": "FR",
+      "source": "FR-AMF-ESG-PAGE",
+      "source_id": "FR-AMF-ESG-PAGE",
+      "url": "https://www.amf-france.org/en/news-publications/news-releases/amf-news-releases/amf-strengthens-its-",
+      "status": "success",
+      "regulations_scraped": 3,
+      "regulations_saved": 3,
+      "regulations_indexed": 3,
+      "duration_seconds": 48.52,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    },
+    {
+      "jurisdiction": "FR",
+      "source": "FR-AMF-Crypto-PAGE",
+      "source_id": "FR-AMF-Crypto-PAGE",
+      "url": "https://www.amf-france.org/en/news-publications/news/advertising-crypto-assets-amf-publishes-its-doc",
+      "status": "success",
+      "regulations_scraped": 11,
+      "regulations_saved": 11,
+      "regulations_indexed": 11,
+      "duration_seconds": 53.14,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    },
+    {
+      "jurisdiction": "GLOBAL",
+      "source": "GLOBAL-IOSCO-Crypto-PDF",
+      "source_id": "GLOBAL-IOSCO-Crypto-PDF",
+      "url": "https://www.iosco.org/library/pubdocs/pdf/IOSCOPD718.pdf",
+      "status": "success",
+      "regulations_scraped": 24,
+      "regulations_saved": 24,
+      "regulations_indexed": 24,
+      "duration_seconds": 124.88,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    },
+    {
+      "jurisdiction": "GLOBAL",
+      "source": "GLOBAL-IOSCO-ESG-PDF",
+      "source_id": "GLOBAL-IOSCO-ESG-PDF",
+      "url": "https://www.iosco.org/library/pubdocs/pdf/IOSCOPD729.pdf",
+      "status": "success",
+      "regulations_scraped": 10,
+      "regulations_saved": 10,
+      "regulations_indexed": 10,
+      "duration_seconds": 116.25,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    },
+    {
+      "jurisdiction": "UK",
+      "source": "UK-FCA-COBS-HANDBOOK",
+      "source_id": "UK-FCA-COBS-HANDBOOK",
+      "url": "https://www.handbook.fca.org.uk/handbook/COBS/4/",
+      "status": "success",
+      "regulations_scraped": 20,
+      "regulations_saved": 20,
+      "regulations_indexed": 20,
+      "duration_seconds": 288.1,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    },
+    {
+      "jurisdiction": "UK",
+      "source": "UK-FCA-COBS-HANDBOOK",
+      "source_id": "UK-FCA-COBS-HANDBOOK",
+      "url": "https://www.handbook.fca.org.uk/handbook/COBS/2/2.html",
+      "status": "success",
+      "regulations_scraped": 3,
+      "regulations_saved": 3,
+      "regulations_indexed": 3,
+      "duration_seconds": 85.59,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    },
+    {
+      "jurisdiction": "UK",
+      "source": "UK-FCA-COBS-HANDBOOK",
+      "source_id": "UK-FCA-COBS-HANDBOOK",
+      "url": "https://www.handbook.fca.org.uk/handbook/COBS/13/",
+      "status": "success",
+      "regulations_scraped": 27,
+      "regulations_saved": 27,
+      "regulations_indexed": 27,
+      "duration_seconds": 220.67,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    },
+    {
+      "jurisdiction": "UK",
+      "source": "UK-FCA-COBS-HANDBOOK",
+      "source_id": "UK-FCA-COBS-HANDBOOK",
+      "url": "https://www.handbook.fca.org.uk/handbook/COBS/14/",
+      "status": "success",
+      "regulations_scraped": 17,
+      "regulations_saved": 17,
+      "regulations_indexed": 17,
+      "duration_seconds": 58.16,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    },
+    {
+      "jurisdiction": "UK",
+      "source": "UK-FCA-PRIN-HANDBOOK",
+      "source_id": "UK-FCA-PRIN-HANDBOOK",
+      "url": "https://www.handbook.fca.org.uk/handbook/PRIN/2/",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 119.91,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "UK",
+      "source": "UK-FCA-Consumer-Duty-PDF",
+      "source_id": "UK-FCA-Consumer-Duty-PDF",
+      "url": "https://www.fca.org.uk/publication/policy/ps23-15.pdf",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 160.04,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "UK",
+      "source": "UK-FCA-Consumer-Duty-PAGE",
+      "source_id": "UK-FCA-Consumer-Duty-PAGE",
+      "url": "https://www.fca.org.uk/publications/policy-statements/ps22-9-strengthening-financial-promotion-rules",
+      "status": "success",
+      "regulations_scraped": 1,
+      "regulations_saved": 1,
+      "regulations_indexed": 1,
+      "duration_seconds": 30.06,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    },
+    {
+      "jurisdiction": "UK",
+      "source": "UK-FCA-ESG-Greenwashing-PDF",
+      "source_id": "UK-FCA-ESG-Greenwashing-PDF",
+      "url": "https://www.fca.org.uk/publication/correspondence/dear-ceo-letter-anti-greenwashing-rule.pdf",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 16.77,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "UK",
+      "source": "UK-FCA-ESG-Greenwashing-PAGE",
+      "source_id": "UK-FCA-ESG-Greenwashing-PAGE",
+      "url": "https://www.fca.org.uk/publications/policy-statements/ps23-16-sustainability-disclosure-requirements",
+      "status": "success",
+      "regulations_scraped": 1,
+      "regulations_saved": 1,
+      "regulations_indexed": 1,
+      "duration_seconds": 56.04,
+      "success_rate": 100.0,
+      "retry_count": 1,
+      "errors": []
+    },
+    {
+      "jurisdiction": "US",
+      "source": "US-SEC-Marketing-Rule-PDF",
+      "source_id": "US-SEC-Marketing-Rule-PDF",
+      "url": "https://www.sec.gov/files/rules/final/2020/ia-5653.pdf",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 15.64,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "US",
+      "source": "US-SEC-Marketing-Rule-PAGE",
+      "source_id": "US-SEC-Marketing-Rule-PAGE",
+      "url": "https://www.sec.gov/investment/investment-adviser-marketing",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 37.59,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "US",
+      "source": "US-SEC-Investment-Advisers-PDF",
+      "source_id": "US-SEC-Investment-Advisers-PDF",
+      "url": "https://www.sec.gov/about/laws/iaa40.pdf",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 15.09,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "US",
+      "source": "US-FINRA-Communications-PAGE",
+      "source_id": "US-FINRA-Communications-PAGE",
+      "url": "https://www.finra.org/rules-guidance/rulebooks/finra-rules/2210",
+      "status": "success",
+      "regulations_scraped": 2,
+      "regulations_saved": 2,
+      "regulations_indexed": 2,
+      "duration_seconds": 151.08,
+      "success_rate": 100.0,
+      "retry_count": 2,
+      "errors": []
+    },
+    {
+      "jurisdiction": "US",
+      "source": "US-FINRA-Communications-PAGE",
+      "source_id": "US-FINRA-Communications-PAGE",
+      "url": "https://www.finra.org/rules-guidance/rulebooks/finra-rules/2220",
+      "status": "success",
+      "regulations_scraped": 2,
+      "regulations_saved": 2,
+      "regulations_indexed": 2,
+      "duration_seconds": 53.18,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    },
+    {
+      "jurisdiction": "US",
+      "source": "US-FINRA-Communications-PAGE",
+      "source_id": "US-FINRA-Communications-PAGE",
+      "url": "https://www.finra.org/rules-guidance/rulebooks/finra-rules/2241",
+      "status": "success",
+      "regulations_scraped": 12,
+      "regulations_saved": 12,
+      "regulations_indexed": 12,
+      "duration_seconds": 61.17,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    },
+    {
+      "jurisdiction": "US",
+      "source": "US-SEC-ESG-Climate-PDF",
+      "source_id": "US-SEC-ESG-Climate-PDF",
+      "url": "https://www.sec.gov/files/rules/interp/2021/im-12532.pdf",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 29.94,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "ZA",
+      "source": "ZA-FSCA-FAIS-PDF",
+      "source_id": "ZA-FSCA-FAIS-PDF",
+      "url": "https://www.fsca.co.za/Regulatory%20Frameworks/Docs/RFI%202%20of%202003.pdf",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 16.26,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "ZA",
+      "source": "ZA-FSCA-Advertising-PDF",
+      "source_id": "ZA-FSCA-Advertising-PDF",
+      "url": "https://www.fsca.co.za/Regulatory%20Frameworks/Documents/Board%20Notices/2021/BN100%20of%202021%20Co",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 16.26,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "ZA",
+      "source": "ZA-FSCA-Crypto-PDF",
+      "source_id": "ZA-FSCA-Crypto-PDF",
+      "url": "https://www.fsca.co.za/Regulatory%20Frameworks/Documents/Position%20Papers/PP2%20of%202022%20-%20Pos",
+      "status": "failed",
+      "regulations_scraped": 0,
+      "regulations_saved": 0,
+      "regulations_indexed": 0,
+      "duration_seconds": 16.08,
+      "success_rate": 0.0,
+      "retry_count": 3,
+      "errors": [
+        "No regulations extracted after all retries"
+      ]
+    },
+    {
+      "jurisdiction": "ZA",
+      "source": "ZA-FSCA-ESG-PAGE",
+      "source_id": "ZA-FSCA-ESG-PAGE",
+      "url": "https://www.fsca.co.za/Regulatory%20Frameworks/Pages/Conduct-Standard-for-Regulated-Entities.aspx",
+      "status": "success",
+      "regulations_scraped": 11,
+      "regulations_saved": 11,
+      "regulations_indexed": 11,
+      "duration_seconds": 49.46,
+      "success_rate": 100.0,
+      "retry_count": 0,
+      "errors": []
+    }
+  ]
+}

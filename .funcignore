@@ -1,0 +1,7 @@
+git*
+.vscode
+tests
+.env
+*.pyc
+__pycache__
+.venv

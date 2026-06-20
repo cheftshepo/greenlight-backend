@@ -1,0 +1,475 @@
+'local.settings.json' found in root directory (/home/tshepo/Desktop/matt-murdock).
+Resolving worker runtime to 'python'.
+Found Python version 3.11.14 (python3).
+Selected out-of-process host.
+
+
+                  %%%%%%
+                 %%%%%%
+            @   %%%%%%    @
+          @@   %%%%%%      @@
+       @@@    %%%%%%%%%%%    @@@
+     @@      %%%%%%%%%%        @@
+       @@         %%%%       @@
+         @@      %%%       @@
+           @@    %%      @@
+                %%
+                %
+
+
+Azure Functions Core Tools
+Core Tools Version:       4.5.0+e74aae22c9630777c9f58354f290a6e214218546 (64-bit)
+Function Runtime Version: 4.1044.400.25520
+
+[2026-01-06T10:58:20.719Z] Building host: version spec: , startup suppressed: 'False', configuration suppressed: 'False', startup operation id: '9cd22674-be47-4f3d-97f7-20116cad35bc'
+[2026-01-06T10:58:20.787Z] Reading host configuration file '/home/tshepo/Desktop/matt-murdock/host.json'
+[2026-01-06T10:58:20.789Z] Host configuration file read:
+[2026-01-06T10:58:20.789Z] {
+[2026-01-06T10:58:20.789Z]   "version": "2.0",
+[2026-01-06T10:58:20.789Z]   "logging": {
+[2026-01-06T10:58:20.789Z]     "logLevel": {
+[2026-01-06T10:58:20.789Z]       "default": "Information"
+[2026-01-06T10:58:20.789Z]     }
+[2026-01-06T10:58:20.789Z]   },
+[2026-01-06T10:58:20.789Z]   "extensionBundle": {
+[2026-01-06T10:58:20.789Z]     "id": "Microsoft.Azure.Functions.ExtensionBundle",
+[2026-01-06T10:58:20.789Z]     "version": "[4.*, 5.0.0)"
+[2026-01-06T10:58:20.789Z]   },
+[2026-01-06T10:58:20.789Z]   "functionTimeout": "00:10:00"
+[2026-01-06T10:58:20.789Z] }
+[2026-01-06T10:58:20.812Z] Looking for extension bundle Microsoft.Azure.Functions.ExtensionBundle at /home/tshepo/.azure-functions-core-tools/Functions/ExtensionBundles/Microsoft.Azure.Functions.ExtensionBundle
+[2026-01-06T10:58:20.813Z] Applying platform release channel configuration LATEST. Bundle version 4.30.0 will be used
+[2026-01-06T10:58:20.814Z] Found a matching extension bundle at /home/tshepo/.azure-functions-core-tools/Functions/ExtensionBundles/Microsoft.Azure.Functions.ExtensionBundle/4.30.0
+[2026-01-06T10:58:20.880Z] Loading functions metadata
+[2026-01-06T10:58:20.883Z] Worker indexing is enabled
+[2026-01-06T10:58:20.887Z] Fetching metadata for workerRuntime: python
+[2026-01-06T10:58:20.887Z] Reading functions metadata (Worker)
+[2026-01-06T10:58:21.236Z]  INFO: Starting Azure Functions Python Worker.
+[2026-01-06T10:58:21.236Z]  INFO: Worker ID: 2ebd3c62-617e-4aa1-a926-fc316671bb7f, Request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, Host Address: 127.0.0.1:46079
+[2026-01-06T10:58:21.591Z]  INFO: Using allowed directories for shared memory: ['/dev/shm'] from App Setting: FUNCTIONS_UNIX_SHARED_MEMORY_DIRECTORIES
+[2026-01-06T10:58:21.631Z]  INFO: Successfully opened gRPC channel to 127.0.0.1:46079 
+[2026-01-06T10:58:21.631Z]  INFO: Detaching console logging.
+[2026-01-06T10:58:23.724Z] Switched to gRPC logging.
+[2026-01-06T10:58:23.740Z] Received WorkerInitRequest, python version 3.11.14 (main, Oct 25 2025, 07:56:15) [GCC 15.1.1 20250729], worker version 4.40.2, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394. App Settings state: PYTHON_THREADPOOL_THREAD_COUNT: 1000 | PYTHON_ENABLE_WORKER_EXTENSIONS: False. To enable debug level logging, please refer to https://aka.ms/python-enable-debug-logging
+[2026-01-06T10:58:24.138Z] Received WorkerMetadataRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_path: /home/tshepo/Desktop/matt-murdock/function_app.py
+[2026-01-06T10:58:30.154Z] Indexed function app and found 33 functions
+[2026-01-06T10:58:30.157Z] Successfully processed FunctionMetadataRequest for functions: Function Name: health_check, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: login_endpoint, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: get_current_user, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: verify_token_endpoint, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: verify_token_with_role_endpoint, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: upload_document, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: scan_document, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: get_document_handler, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: list_documents_handler, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: generate_questions_handler, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: chat_handler, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: jurisdictions_handler, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: submit_answers_endpoint, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: briefing_endpoint, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: submit_for_review, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: approve_document, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: reject_document, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: escalate_to_dla_piper, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: list_review_requests, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: get_workflow_status, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: list_users_endpoint, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: get_user_endpoint, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: dashboard_handler, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: export_report_handler, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: audit_search_handler, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: audit_document_history_handler, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: audit_export_handler, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: rag_setup_handler, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: rag_stats_handler, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: rag_ingest_handler, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: get_organization_handler, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: get_organization_usage_handler, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')] Function Name: CORS, Function Binding: [('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', ''), ('httpTrigger', 'req', ''), ('http', '$return', '')]. Deferred bindings enabled: False.
+[2026-01-06T10:58:30.231Z] 33 functions found (Worker)
+[2026-01-06T10:58:30.250Z] 33 functions loaded
+[2026-01-06T10:58:30.255Z] Looking for extension bundle Microsoft.Azure.Functions.ExtensionBundle at /home/tshepo/.azure-functions-core-tools/Functions/ExtensionBundles/Microsoft.Azure.Functions.ExtensionBundle
+[2026-01-06T10:58:30.258Z] Applying platform release channel configuration LATEST. Bundle version 4.30.0 will be used
+[2026-01-06T10:58:30.258Z] Found a matching extension bundle at /home/tshepo/.azure-functions-core-tools/Functions/ExtensionBundles/Microsoft.Azure.Functions.ExtensionBundle/4.30.0
+[2026-01-06T10:58:30.258Z] Fetching information on versions of extension bundle Microsoft.Azure.Functions.ExtensionBundle available on https://cdn.functions.azure.com/public/ExtensionBundles/Microsoft.Azure.Functions.ExtensionBundle/index.json
+[2026-01-06T10:58:31.849Z] Applying platform release channel configuration LATEST. Bundle version 4.30.0 will be used
+[2026-01-06T10:58:31.859Z] Skipping bundle download since it already exists at path /home/tshepo/.azure-functions-core-tools/Functions/ExtensionBundles/Microsoft.Azure.Functions.ExtensionBundle/4.30.0
+[2026-01-06T10:58:31.860Z] Loading extension bundle from /home/tshepo/.azure-functions-core-tools/Functions/ExtensionBundles/Microsoft.Azure.Functions.ExtensionBundle/4.30.0/bin
+[2026-01-06T10:58:31.861Z] Script Startup resetting load context with base path: '/home/tshepo/.azure-functions-core-tools/Functions/ExtensionBundles/Microsoft.Azure.Functions.ExtensionBundle/4.30.0/bin'.
+[2026-01-06T10:58:31.884Z] Reading host configuration file '/home/tshepo/Desktop/matt-murdock/host.json'
+[2026-01-06T10:58:31.884Z] Host configuration file read:
+[2026-01-06T10:58:31.884Z] {
+[2026-01-06T10:58:31.884Z]   "version": "2.0",
+[2026-01-06T10:58:31.884Z]   "logging": {
+[2026-01-06T10:58:31.884Z]     "logLevel": {
+[2026-01-06T10:58:31.884Z]       "default": "Information"
+[2026-01-06T10:58:31.884Z]     }
+[2026-01-06T10:58:31.884Z]   },
+[2026-01-06T10:58:31.884Z]   "extensionBundle": {
+[2026-01-06T10:58:31.884Z]     "id": "Microsoft.Azure.Functions.ExtensionBundle",
+[2026-01-06T10:58:31.884Z]     "version": "[4.*, 5.0.0)"
+[2026-01-06T10:58:31.884Z]   },
+[2026-01-06T10:58:31.884Z]   "functionTimeout": "00:10:00"
+[2026-01-06T10:58:31.884Z] }
+[2026-01-06T10:58:31.951Z] Starting host metrics provider.
+[2026-01-06T10:58:32.145Z] Initializing Warmup Extension.
+[2026-01-06T10:58:32.222Z] Initializing Host. OperationId: '9cd22674-be47-4f3d-97f7-20116cad35bc'.
+[2026-01-06T10:58:32.228Z] Host initialization: ConsecutiveErrors=0, StartupCount=1, OperationId=9cd22674-be47-4f3d-97f7-20116cad35bc
+[2026-01-06T10:58:32.270Z] LoggerFilterOptions
+[2026-01-06T10:58:32.270Z] {
+[2026-01-06T10:58:32.270Z]   "MinLevel": "None",
+[2026-01-06T10:58:32.270Z]   "Rules": [
+[2026-01-06T10:58:32.270Z]     {
+[2026-01-06T10:58:32.270Z]       "ProviderName": null,
+[2026-01-06T10:58:32.270Z]       "CategoryName": "Microsoft.Hosting.Lifetime",
+[2026-01-06T10:58:32.270Z]       "LogLevel": "None",
+[2026-01-06T10:58:32.270Z]       "Filter": null
+[2026-01-06T10:58:32.270Z]     },
+[2026-01-06T10:58:32.270Z]     {
+[2026-01-06T10:58:32.270Z]       "ProviderName": "Azure.Functions.Cli.Diagnostics.ColoredConsoleLoggerProvider",
+[2026-01-06T10:58:32.270Z]       "CategoryName": null,
+[2026-01-06T10:58:32.270Z]       "LogLevel": "None",
+[2026-01-06T10:58:32.270Z]       "Filter": null
+[2026-01-06T10:58:32.270Z]     },
+[2026-01-06T10:58:32.270Z]     {
+[2026-01-06T10:58:32.271Z]       "ProviderName": "Azure.Functions.Cli.Diagnostics.ColoredConsoleLoggerProvider",
+[2026-01-06T10:58:32.271Z]       "CategoryName": null,
+[2026-01-06T10:58:32.271Z]       "LogLevel": null,
+[2026-01-06T10:58:32.271Z]       "Filter": "<AddFilter>b__0"
+[2026-01-06T10:58:32.271Z]     },
+[2026-01-06T10:58:32.271Z]     {
+[2026-01-06T10:58:32.271Z]       "ProviderName": null,
+[2026-01-06T10:58:32.271Z]       "CategoryName": null,
+[2026-01-06T10:58:32.271Z]       "LogLevel": null,
+[2026-01-06T10:58:32.271Z]       "Filter": "<AddFilter>b__0"
+[2026-01-06T10:58:32.271Z]     },
+[2026-01-06T10:58:32.271Z]     {
+[2026-01-06T10:58:32.271Z]       "ProviderName": null,
+[2026-01-06T10:58:32.271Z]       "CategoryName": null,
+[2026-01-06T10:58:32.271Z]       "LogLevel": null,
+[2026-01-06T10:58:32.271Z]       "Filter": "<AddFilter>b__0"
+[2026-01-06T10:58:32.271Z]     },
+[2026-01-06T10:58:32.271Z]     {
+[2026-01-06T10:58:32.271Z]       "ProviderName": null,
+[2026-01-06T10:58:32.271Z]       "CategoryName": null,
+[2026-01-06T10:58:32.271Z]       "LogLevel": "Information",
+[2026-01-06T10:58:32.271Z]       "Filter": null
+[2026-01-06T10:58:32.271Z]     },
+[2026-01-06T10:58:32.271Z]     {
+[2026-01-06T10:58:32.271Z]       "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.SystemLoggerProvider",
+[2026-01-06T10:58:32.271Z]       "CategoryName": null,
+[2026-01-06T10:58:32.271Z]       "LogLevel": "None",
+[2026-01-06T10:58:32.271Z]       "Filter": null
+[2026-01-06T10:58:32.271Z]     },
+[2026-01-06T10:58:32.271Z]     {
+[2026-01-06T10:58:32.271Z]       "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.SystemLoggerProvider",
+[2026-01-06T10:58:32.271Z]       "CategoryName": null,
+[2026-01-06T10:58:32.271Z]       "LogLevel": null,
+[2026-01-06T10:58:32.271Z]       "Filter": "<AddFilter>b__0"
+[2026-01-06T10:58:32.271Z]     },
+[2026-01-06T10:58:32.272Z]     {
+[2026-01-06T10:58:32.272Z]       "ProviderName": "Azure.Functions.Cli.Diagnostics.ColoredConsoleLoggerProvider",
+[2026-01-06T10:58:32.272Z]       "CategoryName": null,
+[2026-01-06T10:58:32.272Z]       "LogLevel": null,
+[2026-01-06T10:58:32.272Z]       "Filter": "<AddFilter>b__0"
+[2026-01-06T10:58:32.272Z]     }
+[2026-01-06T10:58:32.272Z]   ]
+[2026-01-06T10:58:32.272Z] }
+[2026-01-06T10:58:32.272Z] LoggerFilterOptions
+[2026-01-06T10:58:32.272Z] {
+[2026-01-06T10:58:32.272Z]   "MinLevel": "None",
+[2026-01-06T10:58:32.272Z]   "Rules": [
+[2026-01-06T10:58:32.272Z]     {
+[2026-01-06T10:58:32.272Z]       "ProviderName": null,
+[2026-01-06T10:58:32.272Z]       "CategoryName": "Microsoft.Hosting.Lifetime",
+[2026-01-06T10:58:32.272Z]       "LogLevel": "None",
+[2026-01-06T10:58:32.272Z]       "Filter": null
+[2026-01-06T10:58:32.272Z]     },
+[2026-01-06T10:58:32.272Z]     {
+[2026-01-06T10:58:32.272Z]       "ProviderName": "Azure.Functions.Cli.Diagnostics.ColoredConsoleLoggerProvider",
+[2026-01-06T10:58:32.272Z]       "CategoryName": null,
+[2026-01-06T10:58:32.272Z]       "LogLevel": "None",
+[2026-01-06T10:58:32.273Z]       "Filter": null
+[2026-01-06T10:58:32.273Z]     },
+[2026-01-06T10:58:32.273Z]     {
+[2026-01-06T10:58:32.273Z]       "ProviderName": "Azure.Functions.Cli.Diagnostics.ColoredConsoleLoggerProvider",
+[2026-01-06T10:58:32.273Z]       "CategoryName": null,
+[2026-01-06T10:58:32.273Z]       "LogLevel": null,
+[2026-01-06T10:58:32.273Z]       "Filter": "<AddFilter>b__0"
+[2026-01-06T10:58:32.273Z]     },
+[2026-01-06T10:58:32.273Z]     {
+[2026-01-06T10:58:32.273Z]       "ProviderName": null,
+[2026-01-06T10:58:32.273Z]       "CategoryName": null,
+[2026-01-06T10:58:32.273Z]       "LogLevel": null,
+[2026-01-06T10:58:32.273Z]       "Filter": "<AddFilter>b__0"
+[2026-01-06T10:58:32.273Z]     },
+[2026-01-06T10:58:32.273Z]     {
+[2026-01-06T10:58:32.273Z]       "ProviderName": null,
+[2026-01-06T10:58:32.273Z]       "CategoryName": null,
+[2026-01-06T10:58:32.273Z]       "LogLevel": null,
+[2026-01-06T10:58:32.273Z]       "Filter": "<AddFilter>b__0"
+[2026-01-06T10:58:32.273Z]     },
+[2026-01-06T10:58:32.273Z]     {
+[2026-01-06T10:58:32.273Z]       "ProviderName": null,
+[2026-01-06T10:58:32.273Z]       "CategoryName": null,
+[2026-01-06T10:58:32.273Z]       "LogLevel": "Information",
+[2026-01-06T10:58:32.273Z]       "Filter": null
+[2026-01-06T10:58:32.273Z]     },
+[2026-01-06T10:58:32.273Z]     {
+[2026-01-06T10:58:32.273Z]       "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.SystemLoggerProvider",
+[2026-01-06T10:58:32.273Z]       "CategoryName": null,
+[2026-01-06T10:58:32.273Z]       "LogLevel": "None",
+[2026-01-06T10:58:32.273Z]       "Filter": null
+[2026-01-06T10:58:32.273Z]     },
+[2026-01-06T10:58:32.273Z]     {
+[2026-01-06T10:58:32.273Z]       "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.SystemLoggerProvider",
+[2026-01-06T10:58:32.274Z]       "CategoryName": null,
+[2026-01-06T10:58:32.274Z]       "LogLevel": null,
+[2026-01-06T10:58:32.274Z]       "Filter": "<AddFilter>b__0"
+[2026-01-06T10:58:32.274Z]     },
+[2026-01-06T10:58:32.274Z]     {
+[2026-01-06T10:58:32.274Z]       "ProviderName": "Azure.Functions.Cli.Diagnostics.ColoredConsoleLoggerProvider",
+[2026-01-06T10:58:32.274Z]       "CategoryName": null,
+[2026-01-06T10:58:32.274Z]       "LogLevel": null,
+[2026-01-06T10:58:32.274Z]       "Filter": "<AddFilter>b__0"
+[2026-01-06T10:58:32.274Z]     }
+[2026-01-06T10:58:32.274Z]   ]
+[2026-01-06T10:58:32.274Z] }
+[2026-01-06T10:58:32.274Z] HttpWorkerOptions
+[2026-01-06T10:58:32.274Z] {
+[2026-01-06T10:58:32.274Z]   "Type": 0,
+[2026-01-06T10:58:32.274Z]   "Description": null,
+[2026-01-06T10:58:32.274Z]   "Arguments": null,
+[2026-01-06T10:58:32.274Z]   "Port": 39223,
+[2026-01-06T10:58:32.274Z]   "IsPortManuallySet": false,
+[2026-01-06T10:58:32.274Z]   "EnableForwardingHttpRequest": false,
+[2026-01-06T10:58:32.274Z]   "EnableProxyingHttpRequest": false,
+[2026-01-06T10:58:32.274Z]   "InitializationTimeout": "00:00:30",
+[2026-01-06T10:58:32.274Z]   "CustomRoutesEnabled": false,
+[2026-01-06T10:58:32.274Z]   "Http": null
+[2026-01-06T10:58:32.274Z] }
+[2026-01-06T10:58:32.275Z] FunctionResultAggregatorOptions
+[2026-01-06T10:58:32.275Z] {
+[2026-01-06T10:58:32.275Z]   "BatchSize": 1000,
+[2026-01-06T10:58:32.275Z]   "FlushTimeout": "00:00:30",
+[2026-01-06T10:58:32.275Z]   "IsEnabled": true
+[2026-01-06T10:58:32.275Z] }
+[2026-01-06T10:58:32.275Z] ConcurrencyOptions
+[2026-01-06T10:58:32.275Z] {
+[2026-01-06T10:58:32.275Z]   "DynamicConcurrencyEnabled": false,
+[2026-01-06T10:58:32.275Z]   "MaximumFunctionConcurrency": 500,
+[2026-01-06T10:58:32.275Z]   "CPUThreshold": 0.8,
+[2026-01-06T10:58:32.275Z]   "SnapshotPersistenceEnabled": true
+[2026-01-06T10:58:32.275Z] }
+[2026-01-06T10:58:32.275Z] SingletonOptions
+[2026-01-06T10:58:32.275Z] {
+[2026-01-06T10:58:32.275Z]   "LockPeriod": "00:00:15",
+[2026-01-06T10:58:32.275Z]   "ListenerLockPeriod": "00:00:15",
+[2026-01-06T10:58:32.275Z]   "LockAcquisitionTimeout": "10675199.02:48:05.4775807",
+[2026-01-06T10:58:32.275Z]   "LockAcquisitionPollingInterval": "00:00:05",
+[2026-01-06T10:58:32.275Z]   "ListenerLockRecoveryPollingInterval": "00:01:00"
+[2026-01-06T10:58:32.275Z] }
+[2026-01-06T10:58:32.275Z] ScaleOptions
+[2026-01-06T10:58:32.275Z] {
+[2026-01-06T10:58:32.276Z]   "ScaleMetricsMaxAge": "00:02:00",
+[2026-01-06T10:58:32.276Z]   "ScaleMetricsSampleInterval": "00:00:10",
+[2026-01-06T10:58:32.276Z]   "MetricsPurgeEnabled": true,
+[2026-01-06T10:58:32.276Z]   "IsTargetScalingEnabled": true,
+[2026-01-06T10:58:32.276Z]   "IsRuntimeScalingEnabled": false
+[2026-01-06T10:58:32.276Z] }
+[2026-01-06T10:58:32.278Z] Starting JobHost
+[2026-01-06T10:58:32.285Z] Starting Host (HostId=skynet-1881369363, InstanceId=00d2a716-5e21-417c-b31a-667b24a14117, Version=4.1044.400.25520, ProcessId=107059, AppDomainId=1, InDebugMode=False, InDiagnosticMode=False, FunctionsExtensionVersion=(null))
+[2026-01-06T10:58:32.293Z] Loading functions metadata
+[2026-01-06T10:58:32.294Z] Worker indexing is enabled
+[2026-01-06T10:58:32.294Z] Fetching metadata for workerRuntime: python
+[2026-01-06T10:58:32.294Z] Reading functions metadata (Worker)
+[2026-01-06T10:58:32.302Z] Reading functions metadata (Custom)
+[2026-01-06T10:58:32.317Z] 0 functions found (Custom)
+[2026-01-06T10:58:32.325Z] 33 functions loaded
+[2026-01-06T10:58:32.397Z] Generating 33 job function(s)
+[2026-01-06T10:58:32.406Z] Worker process started and initialized.
+[2026-01-06T10:58:32.416Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 2d85895f-fc48-5f87-aecb-ef180c52c251,function_name: approve_document, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.417Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 2d85895f-fc48-5f87-aecb-ef180c52c251,function Name: approve_document,programming model: V2
+[2026-01-06T10:58:32.421Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 0a542ff0-3ffa-58fc-89b9-dc355191a75a,function_name: audit_document_history_handler, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.421Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 4c13e71f-5f78-513e-b2d0-0ecd89ca56ce,function Name: audit_export_handler,programming model: V2
+[2026-01-06T10:58:32.421Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 0a542ff0-3ffa-58fc-89b9-dc355191a75a,function Name: audit_document_history_handler,programming model: V2
+[2026-01-06T10:58:32.422Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 4c13e71f-5f78-513e-b2d0-0ecd89ca56ce,function_name: audit_export_handler, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.422Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: e6a52fcb-778b-518f-b70b-67897709d727,function_name: audit_search_handler, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.424Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: e6a52fcb-778b-518f-b70b-67897709d727,function Name: audit_search_handler,programming model: V2
+[2026-01-06T10:58:32.425Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 5d5a1cee-c628-5987-b00b-3f110074c598,function_name: briefing_endpoint, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.426Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: b2232dc7-7821-5acc-aada-7bb3c5504c88,function_name: chat_handler, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.426Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: b2232dc7-7821-5acc-aada-7bb3c5504c88,function Name: chat_handler,programming model: V2
+[2026-01-06T10:58:32.426Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 5d5a1cee-c628-5987-b00b-3f110074c598,function Name: briefing_endpoint,programming model: V2
+[2026-01-06T10:58:32.430Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: bdd99c7a-c486-5796-84b1-fd86da2b9810,function_name: CORS, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.430Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: bdd99c7a-c486-5796-84b1-fd86da2b9810,function Name: CORS,programming model: V2
+[2026-01-06T10:58:32.430Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 5cb9bf14-0da1-50e7-bc4a-b68211059a8f,function_name: dashboard_handler, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.431Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 5cb9bf14-0da1-50e7-bc4a-b68211059a8f,function Name: dashboard_handler,programming model: V2
+[2026-01-06T10:58:32.432Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 6225a013-5e56-53db-a5d3-1166ffd0c9ae,function Name: escalate_to_dla_piper,programming model: V2
+[2026-01-06T10:58:32.432Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 6225a013-5e56-53db-a5d3-1166ffd0c9ae,function_name: escalate_to_dla_piper, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.433Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: f3b49bc2-05a3-5523-9f9f-39c6422541ed,function Name: export_report_handler,programming model: V2
+[2026-01-06T10:58:32.433Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: f3b49bc2-05a3-5523-9f9f-39c6422541ed,function_name: export_report_handler, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.434Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 2ed8030f-e033-517f-ae05-8f3b7e0e196c,function Name: generate_questions_handler,programming model: V2
+[2026-01-06T10:58:32.434Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 2ed8030f-e033-517f-ae05-8f3b7e0e196c,function_name: generate_questions_handler, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.435Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 68f9d862-8334-5e23-bb4a-943a14aedcab,function_name: get_current_user, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.435Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 68f9d862-8334-5e23-bb4a-943a14aedcab,function Name: get_current_user,programming model: V2
+[2026-01-06T10:58:32.435Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 72992a09-0992-5dae-acfc-111e16958ce8,function_name: get_document_handler, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.435Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 72992a09-0992-5dae-acfc-111e16958ce8,function Name: get_document_handler,programming model: V2
+[2026-01-06T10:58:32.435Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: bf61733b-8cf2-5c40-8368-bcc29d442cb0,function_name: get_organization_handler, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.436Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: bf61733b-8cf2-5c40-8368-bcc29d442cb0,function Name: get_organization_handler,programming model: V2
+[2026-01-06T10:58:32.436Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: ae8e5b23-cf07-5724-9486-02fe9607cddf,function_name: get_organization_usage_handler, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.437Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: ae8e5b23-cf07-5724-9486-02fe9607cddf,function Name: get_organization_usage_handler,programming model: V2
+[2026-01-06T10:58:32.437Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 802d8a56-4f08-5912-9479-df125e25430d,function_name: get_user_endpoint, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.437Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 802d8a56-4f08-5912-9479-df125e25430d,function Name: get_user_endpoint,programming model: V2
+[2026-01-06T10:58:32.437Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 60a7c5a7-df55-544a-9361-4ece81b3e290,function_name: get_workflow_status, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.437Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 60a7c5a7-df55-544a-9361-4ece81b3e290,function Name: get_workflow_status,programming model: V2
+[2026-01-06T10:58:32.438Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 633f194c-5737-505b-b100-6f91854050d9,function_name: health_check, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.438Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 633f194c-5737-505b-b100-6f91854050d9,function Name: health_check,programming model: V2
+[2026-01-06T10:58:32.438Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 64db6b18-5ddd-5be4-b93d-ccaf725d99d3,function_name: jurisdictions_handler, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.438Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 64db6b18-5ddd-5be4-b93d-ccaf725d99d3,function Name: jurisdictions_handler,programming model: V2
+[2026-01-06T10:58:32.438Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: a1a2de77-c466-5818-b4e6-1a4cd42417c1,function_name: list_documents_handler, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.438Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: a1a2de77-c466-5818-b4e6-1a4cd42417c1,function Name: list_documents_handler,programming model: V2
+[2026-01-06T10:58:32.438Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 813d815b-2c3c-5e74-809c-4b4b50bf8d1f,function_name: list_review_requests, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.438Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 813d815b-2c3c-5e74-809c-4b4b50bf8d1f,function Name: list_review_requests,programming model: V2
+[2026-01-06T10:58:32.438Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 48961f2c-d29a-5b95-8889-ce204074f5b0,function Name: list_users_endpoint,programming model: V2
+[2026-01-06T10:58:32.438Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 48961f2c-d29a-5b95-8889-ce204074f5b0,function_name: list_users_endpoint, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.439Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: a5c2fe3b-2b8b-5261-b8d7-3988f13eb896,function_name: login_endpoint, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.439Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: b3a73413-e988-5052-b525-fb69849a01c9,function Name: rag_ingest_handler,programming model: V2[2026-01-06T10:58:32.439Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 639c3088-9b25-5e93-9bb3-90b6f79f189f,function_name: rag_setup_handler, function_app_directory : /home/tshepo/Desktop/matt-murdock[2026-01-06T10:58:32.439Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 639c3088-9b25-5e93-9bb3-90b6f79f189f,function Name: rag_setup_handler,programming model: V2
+[2026-01-06T10:58:32.439Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: b3a73413-e988-5052-b525-fb69849a01c9,function_name: rag_ingest_handler, function_app_directory : /home/tshepo/Desktop/matt-murdock
+
+[2026-01-06T10:58:32.440Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: c732daa5-b821-5572-8bda-573b70b2cd19,function_name: rag_stats_handler, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.440Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: c732daa5-b821-5572-8bda-573b70b2cd19,function Name: rag_stats_handler,programming model: V2
+[2026-01-06T10:58:32.440Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: c5434e09-ac36-54bf-a1d8-85fee3e23ae0,function_name: reject_document, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.440Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: c5434e09-ac36-54bf-a1d8-85fee3e23ae0,function Name: reject_document,programming model: V2
+[2026-01-06T10:58:32.440Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 75847739-c2fa-5081-ba41-c8ccc852c428,function_name: scan_document, function_app_directory : /home/tshepo/Desktop/matt-murdock
+
+[2026-01-06T10:58:32.440Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 75847739-c2fa-5081-ba41-c8ccc852c428,function Name: scan_document,programming model: V2
+[2026-01-06T10:58:32.440Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 431716ee-a5e7-576d-b538-cd896cadca36,function_name: submit_answers_endpoint, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.440Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 431716ee-a5e7-576d-b538-cd896cadca36,function Name: submit_answers_endpoint,programming model: V2
+[2026-01-06T10:58:32.440Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: b90f01a0-eefe-5025-be91-73b69bcdc46f,function_name: submit_for_review, function_app_directory : /home/tshepo/Desktop/matt-murdock[2026-01-06T10:58:32.440Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: b90f01a0-eefe-5025-be91-73b69bcdc46f,function Name: submit_for_review,programming model: V2
+[2026-01-06T10:58:32.440Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 90296d2f-0db5-5ac2-9c9f-fe6eee09bc6a,function Name: upload_document,programming model: V2
+[2026-01-06T10:58:32.440Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: a5c2fe3b-2b8b-5261-b8d7-3988f13eb896,function Name: login_endpoint,programming model: V2
+[2026-01-06T10:58:32.440Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 90296d2f-0db5-5ac2-9c9f-fe6eee09bc6a,function_name: upload_document, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.441Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 4e701e9a-7d19-526d-a6e8-aae594538349,function Name: verify_token_endpoint,programming model: V2
+[2026-01-06T10:58:32.441Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 318e8646-79b2-5de9-9e54-d91797c122bc,function_name: verify_token_with_role_endpoint, function_app_directory : /home/tshepo/Desktop/matt-murdock
+[2026-01-06T10:58:32.441Z] Successfully processed FunctionLoadRequest, request ID: ebf601ca-bd40-4fcb-bd40-27c3fd666394, function ID: 318e8646-79b2-5de9-9e54-d91797c122bc,function Name: verify_token_with_role_endpoint,programming model: V2
+[2026-01-06T10:58:32.441Z] Received WorkerLoadRequest, request ID ebf601ca-bd40-4fcb-bd40-27c3fd666394, function_id: 4e701e9a-7d19-526d-a6e8-aae594538349,function_name: verify_token_endpoint, function_app_directory : /home/tshepo/Desktop/matt-murdock
+
+[2026-01-06T10:58:32.535Z] Found the following functions:
+[2026-01-06T10:58:32.535Z] Host.Functions.approve_document
+[2026-01-06T10:58:32.535Z] Host.Functions.audit_document_history_handler
+[2026-01-06T10:58:32.536Z] Host.Functions.audit_export_handler
+[2026-01-06T10:58:32.536Z] Host.Functions.audit_search_handler
+[2026-01-06T10:58:32.536Z] Host.Functions.briefing_endpoint
+[2026-01-06T10:58:32.536Z] Host.Functions.chat_handler
+[2026-01-06T10:58:32.536Z] Host.Functions.CORS
+[2026-01-06T10:58:32.536Z] Host.Functions.dashboard_handler
+[2026-01-06T10:58:32.536Z] Host.Functions.escalate_to_dla_piper
+[2026-01-06T10:58:32.536Z] Host.Functions.export_report_handler
+[2026-01-06T10:58:32.536Z] Host.Functions.generate_questions_handler
+[2026-01-06T10:58:32.536Z] Host.Functions.get_current_user
+[2026-01-06T10:58:32.536Z] Host.Functions.get_document_handler
+[2026-01-06T10:58:32.536Z] Host.Functions.get_organization_handler
+[2026-01-06T10:58:32.536Z] Host.Functions.get_organization_usage_handler
+[2026-01-06T10:58:32.536Z] Host.Functions.get_user_endpoint
+[2026-01-06T10:58:32.536Z] Host.Functions.get_workflow_status
+[2026-01-06T10:58:32.536Z] Host.Functions.health_check
+[2026-01-06T10:58:32.536Z] Host.Functions.jurisdictions_handler
+[2026-01-06T10:58:32.536Z] Host.Functions.list_documents_handler
+[2026-01-06T10:58:32.536Z] Host.Functions.list_review_requests
+[2026-01-06T10:58:32.536Z] Host.Functions.list_users_endpoint
+[2026-01-06T10:58:32.536Z] Host.Functions.login_endpoint
+[2026-01-06T10:58:32.536Z] Host.Functions.rag_ingest_handler
+[2026-01-06T10:58:32.536Z] Host.Functions.rag_setup_handler
+[2026-01-06T10:58:32.536Z] Host.Functions.rag_stats_handler
+[2026-01-06T10:58:32.536Z] Host.Functions.reject_document
+[2026-01-06T10:58:32.536Z] Host.Functions.scan_document
+[2026-01-06T10:58:32.536Z] Host.Functions.submit_answers_endpoint
+[2026-01-06T10:58:32.536Z] Host.Functions.submit_for_review
+[2026-01-06T10:58:32.536Z] Host.Functions.upload_document
+[2026-01-06T10:58:32.536Z] Host.Functions.verify_token_endpoint
+[2026-01-06T10:58:32.537Z] Host.Functions.verify_token_with_role_endpoint
+[2026-01-06T10:58:32.537Z] 
+[2026-01-06T10:58:32.550Z] HttpOptions
+[2026-01-06T10:58:32.550Z] {
+[2026-01-06T10:58:32.550Z]   "DynamicThrottlesEnabled": false,
+[2026-01-06T10:58:32.551Z]   "EnableChunkedRequestBinding": false,
+[2026-01-06T10:58:32.551Z]   "MaxConcurrentRequests": -1,
+[2026-01-06T10:58:32.551Z]   "MaxOutstandingRequests": -1,
+[2026-01-06T10:58:32.551Z]   "RoutePrefix": "api"
+[2026-01-06T10:58:32.551Z] }
+[2026-01-06T10:58:32.556Z] Initializing function HTTP routes
+[2026-01-06T10:58:32.556Z] Mapped function route 'api/documents/{documentId}/approve' [POST] to 'approve_document'
+[2026-01-06T10:58:32.556Z] Mapped function route 'api/audit/documents/{documentId}/history' [GET] to 'audit_document_history_handler'
+[2026-01-06T10:58:32.556Z] Mapped function route 'api/audit/export' [GET] to 'audit_export_handler'
+[2026-01-06T10:58:32.556Z] Mapped function route 'api/audit/search' [GET] to 'audit_search_handler'
+[2026-01-06T10:58:32.556Z] Mapped function route 'api/documents/{documentId}/briefing' [POST] to 'briefing_endpoint'
+[2026-01-06T10:58:32.556Z] Mapped function route 'api/documents/{documentId}/chat' [POST] to 'chat_handler'
+[2026-01-06T10:58:32.556Z] Mapped function route 'api/CORS' [OPTIONS] to 'CORS'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/dashboard' [GET] to 'dashboard_handler'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/documents/{documentId}/escalate-dla-piper' [POST] to 'escalate_to_dla_piper'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/reports/export' [GET] to 'export_report_handler'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/documents/{documentId}/generate-questions' [POST] to 'generate_questions_handler'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/auth/me' [GET] to 'get_current_user'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/documents/{documentId}' [GET] to 'get_document_handler'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/organization' [GET] to 'get_organization_handler'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/organization/usage' [GET] to 'get_organization_usage_handler'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/user-management/{userId}' [GET] to 'get_user_endpoint'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/documents/{documentId}/workflow-status' [GET] to 'get_workflow_status'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/health' [GET] to 'health_check'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/jurisdictions' [GET] to 'jurisdictions_handler'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/documents' [GET] to 'list_documents_handler'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/review-requests' [GET] to 'list_review_requests'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/user-management/all' [GET] to 'list_users_endpoint'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/auth/login' [POST] to 'login_endpoint'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/rag/ingest' [POST] to 'rag_ingest_handler'
+[2026-01-06T10:58:32.557Z] Mapped function route 'api/rag/setup' [POST] to 'rag_setup_handler'
+[2026-01-06T10:58:32.558Z] Mapped function route 'api/rag/stats' [GET] to 'rag_stats_handler'
+[2026-01-06T10:58:32.558Z] Mapped function route 'api/documents/{documentId}/reject' [POST] to 'reject_document'
+[2026-01-06T10:58:32.558Z] Mapped function route 'api/documents/scan/{documentId}' [POST] to 'scan_document'
+[2026-01-06T10:58:32.558Z] Mapped function route 'api/documents/{documentId}/submit-answers' [POST] to 'submit_answers_endpoint'
+[2026-01-06T10:58:32.558Z] Mapped function route 'api/documents/{documentId}/submit-review' [POST] to 'submit_for_review'
+[2026-01-06T10:58:32.558Z] Mapped function route 'api/documents/upload' [POST] to 'upload_document'
+[2026-01-06T10:58:32.558Z] Mapped function route 'api/auth/verify' [POST] to 'verify_token_endpoint'
+[2026-01-06T10:58:32.558Z] Mapped function route 'api/auth/verify-role/{required_role}' [POST] to 'verify_token_with_role_endpoint'
+[2026-01-06T10:58:32.558Z] 
+[2026-01-06T10:58:32.569Z] Host initialized (271ms)
+[2026-01-06T10:58:32.573Z] Host started (286ms)
+[2026-01-06T10:58:32.574Z] Job host started
+
+Functions:
+
+	approve_document: [POST] http://localhost:7071/api/documents/{documentId}/approve
+
+	audit_document_history_handler: [GET] http://localhost:7071/api/audit/documents/{documentId}/history
+
+	audit_export_handler: [GET] http://localhost:7071/api/audit/export
+
+	audit_search_handler: [GET] http://localhost:7071/api/audit/search
+
+	briefing_endpoint: [POST] http://localhost:7071/api/documents/{documentId}/briefing
+
+	chat_handler: [POST] http://localhost:7071/api/documents/{documentId}/chat
+
+	CORS: [OPTIONS] http://localhost:7071/api/CORS
+
+	dashboard_handler: [GET] http://localhost:7071/api/dashboard
+
+	escalate_to_dla_piper: [POST] http://localhost:7071/api/documents/{documentId}/escalate-dla-piper
+
+	export_report_handler: [GET] http://localhost:7071/api/reports/export
+
+	generate_questions_handler: [POST] http://localhost:7071/api/documents/{documentId}/generate-questions
+
+	get_current_user: [GET] http://localhost:7071/api/auth/me
+
+	get_document_handler: [GET] http://localhost:7071/api/documents/{documentId}
+
+	get_organization_handler: [GET] http://localhost:7071/api/organization
+
+	get_organization_usage_handler: [GET] http://localhost:7071/api/organization/usage
+
+	get_user_endpoint: [GET] http://localhost:7071/api/user-management/{userId}
+
+	get_workflow_status: [GET] http://localhost:7071/api/documents/{documentId}/workflow-status
+
+	health_check: [GET] http://localhost:7071/api/health
+
+	jurisdictions_handler: [GET] http://localhost:7071/api/jurisdictions
+
+	list_documents_handler: [GET] http://localhost:7071/api/documents
+
+	list_review_requests: [GET] http://localhost:7071/api/review-requests
+
+	list_users_endpoint: [GET] http://localhost:7071/api/user-management/all
+
+	login_endpoint: [POST] http://localhost:7071/api/auth/login
+
+	rag_ingest_handler: [POST] http://localhost:7071/api/rag/ingest
+
+	rag_setup_handler: [POST] http://localhost:7071/api/rag/setup
+
+	rag_stats_handler: [GET] http://localhost:7071/api/rag/stats
+
+	reject_document: [POST] http://localhost:7071/api/documents/{documentId}/reject
+
+	scan_document: [POST] http://localhost:7071/api/documents/scan/{documentId}
+
+	submit_answers_endpoint: [POST] http://localhost:7071/api/documents/{documentId}/submit-answers
+
+	submit_for_review: [POST] http://localhost:7071/api/documents/{documentId}/submit-review
+
+	upload_document: [POST] http://localhost:7071/api/documents/upload
+
+	verify_token_endpoint: [POST] http://localhost:7071/api/auth/verify
+
+	verify_token_with_role_endpoint: [POST] http://localhost:7071/api/auth/verify-role/{required_role}
+
+[2026-01-06T10:58:42.620Z] Host lock lease acquired by instance ID '0000000000000000000000008B091FB3'.
