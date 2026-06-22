@@ -20,6 +20,7 @@ cryptography==42.0.8
 
 # Email Services
 sendgrid==6.11.0
+azure-communication-email>=1.0.0
 email-validator==2.1.0
 
 # Document Processing & File Formats

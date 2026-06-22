@@ -694,6 +694,10 @@ def create_document(doc_data: Dict) -> Dict:
         'size_bytes': doc_data.get('size_bytes', 0),
         'blob_name': doc_data.get('blob_name', ''),
         'storage_path': doc_data.get('storage_path', ''),
+        # ✅ FIX: explicit blob fields from upload.py
+        'blob_url': doc_data.get('blob_url', ''),
+        'blob_path': doc_data.get('blob_path', ''),
+        'blob_container': doc_data.get('blob_container', 'documents'),
         'jurisdiction': doc_data.get('jurisdiction', ''),
         'uploaded_by': doc_data.get('uploaded_by', ''),
         'uploaded_by_name': doc_data.get('uploaded_by_name', ''),
@@ -751,16 +755,29 @@ def create_document(doc_data: Dict) -> Dict:
 
 
 def get_document(doc_id: str, org_id: str = None) -> Optional[Dict]:
-    """Get document by ID"""
+    """Get document by ID — always enforces org isolation when org_id is provided"""
+    if not doc_id:
+        return None
+
     container = get_container('documents')
-    
+
     try:
         if org_id:
+            # Fast path: direct read with partition key
             doc = container.read_item(item=doc_id, partition_key=org_id)
-            if doc.get('type') == 'document':
-                return doc
-            return None
+            # ✅ FIX: double-check org matches even on direct read
+            if doc.get('organization_id') != org_id:
+                logger.error(
+                    f"🚫 Partition key matched but org mismatch: "
+                    f"requested={org_id} stored={doc.get('organization_id')}"
+                )
+                return None
+            if doc.get('type') != 'document':
+                return None
+            return doc
         else:
+            # ⚠️ Cross-partition only used internally (e.g. super admin scan)
+            # Never expose this path to user-facing API calls
             query = "SELECT * FROM c WHERE c.id = @id AND c.type = 'document'"
             items = list(container.query_items(
                 query=query,
@@ -768,7 +785,11 @@ def get_document(doc_id: str, org_id: str = None) -> Optional[Dict]:
                 enable_cross_partition_query=True
             ))
             return items[0] if items else None
+
     except exceptions.CosmosResourceNotFoundError:
+        return None
+    except Exception as e:
+        logger.error(f"❌ Get document failed [{doc_id}]: {e}")
         return None
 
 
@@ -801,6 +822,11 @@ def list_documents_by_organization(
     offset: int = 0
 ) -> List[Dict]:
     """List documents for an organization, optionally filtered by status and jurisdiction"""
+    # ✅ FIX: hard block — never run a cross-org query
+    if not org_id or not org_id.strip():
+        logger.error("🚫 list_documents_by_organization called with no org_id — blocked")
+        return []
+
     container = get_container('documents')
 
     conditions = ["c.organization_id = @org_id", "c.type = 'document'"]

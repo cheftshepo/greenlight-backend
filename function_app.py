@@ -594,142 +594,53 @@ def get_document_file(req: func.HttpRequest) -> func.HttpResponse:
     user, error = authenticate_request(req)
     if error:
         return json_response(401, error=error)
-    
-    from function_app_pkg.core.database import get_document
-    from azure.storage.blob import BlobServiceClient, generate_blob_sas, BlobSasPermissions
-    from datetime import datetime, timedelta
-    import logging
-    import os
 
-    logger = logging.getLogger(__name__)
     doc_id = req.route_params["documentId"]
     org_id = user.organization_id
 
-    try:
-        # Get document metadata
-        doc = get_document(doc_id, org_id)
-        if not doc:
-            return json_response(404, error="Document not found")
+    from function_app_pkg.core.database import get_document
+    from function_app_pkg.core.storage import blob_storage
 
-        # CRITICAL: The document ID in the path is the folder name
-        # From diagnostic: dedcb91a-54d8-4fb7-b714-5e9b83e97ef5/6f2d86e3-723c-4d0c-b0c9-33652fec565e.pdf
-        # The folder is the first UUID, the file is the second UUID
-        
-        # Try to get the parent folder from document metadata
-        parent_id = doc.get("parent_id") or doc.get("folder_id") or doc.get("conversation_id")
-        
-        if parent_id:
-            # Use the parent folder structure
-            blob_path = f"{parent_id}/{doc_id}.pdf"
-            logger.info(f"Using parent folder structure: {blob_path}")
-        else:
-            # The blob is stored in a folder named with the first part of the path
-            # From your error, the folder appears to be 'dedcb91a-54d8-4fb7-b714-5e9b83e97ef5'
-            # We need to find this from the document or construct it
-            blob_path = f"{doc_id}/{doc_id}.pdf"
-            logger.info(f"Using flat structure: {blob_path}")
+    doc = get_document(doc_id, org_id)
+    if not doc:
+        return json_response(404, error="Document not found")
+    if doc.get("organization_id") != org_id:
+        return json_response(403, error="Access denied")
 
-        # Storage configuration - USE AzureWebJobsStorage which we know works
-        conn_str = os.getenv("AzureWebJobsStorage")
-        if not conn_str:
-            conn_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
-        
-        container_name = os.getenv("AZURE_STORAGE_CONTAINER", "documents")
-        
-        # Create blob client
-        blob_service_client = BlobServiceClient.from_connection_string(conn_str)
-        
-        # Try multiple possible paths (the diagnostic shows the correct one)
-        possible_paths = [
-            blob_path,
-            f"{doc_id}/{doc_id}.pdf",
-            f"documents/{doc_id}.pdf",
-            doc_id if doc_id.endswith('.pdf') else f"{doc_id}.pdf",
-        ]
-        
-        # Also try with the folder structure from the diagnostic
-        # Since we know the folder is 'dedcb91a-54d8-4fb7-b714-5e9b83e97ef5', 
-        # but we don't have that ID here, we need to find it
-        
-        # Let's list blobs to find the matching one (temporary debugging)
-        container_client = blob_service_client.get_container_client(container_name)
-        
-        # Search for blobs containing this document ID
-        matching_blobs = []
-        try:
-            blobs = container_client.list_blobs(name_starts_with=doc_id[:8])  # Search by prefix
-            for blob in blobs:
-                if doc_id in blob.name:
-                    matching_blobs.append(blob.name)
-                    logger.info(f"Found matching blob: {blob.name}")
-        except Exception as e:
-            logger.warning(f"Error searching blobs: {e}")
-        
-        if matching_blobs:
-            # Use the first matching blob
-            blob_path = matching_blobs[0]
-            logger.info(f"Using found blob path: {blob_path}")
-        else:
-            # If no match found, try the standard pattern from diagnostic
-            # The diagnostic shows the folder is the first UUID
-            # We need to get this from the document's conversation_id or similar
-            conversation_id = doc.get("conversation_id") or doc.get("folder_id")
-            if conversation_id:
-                blob_path = f"{conversation_id}/{doc_id}.pdf"
-            else:
-                # Last resort - assume the document ID itself is the folder
-                # This will need to be fixed based on your data
-                return json_response(404, error="Could not determine blob path structure")
-        
-        # Get blob client
-        blob_client = blob_service_client.get_blob_client(container=container_name, blob=blob_path)
-        
-        # Check if blob exists
-        if not blob_client.exists():
-            # Log available blobs for debugging
-            try:
-                prefix = blob_path.split('/')[0] if '/' in blob_path else None
-                if prefix:
-                    blobs = list(container_client.list_blobs(name_starts_with=prefix, max_results=5))
-                    logger.info(f"Available blobs with prefix '{prefix}': {[b.name for b in blobs]}")
-            except Exception as e:
-                logger.warning(f"Could not list blobs: {e}")
-            
-            return json_response(404, error=f"File not found at path: {blob_path}")
+    blob_path = doc.get("blob_path") or doc.get("file_path") or doc.get("storage_path")
+    if not blob_path:
+        return json_response(404, error="No file stored for this document. Please re-upload.")
 
-        # Generate SAS token using account key from environment
-        account_key = os.getenv("AZURE_STORAGE_ACCOUNT_KEY")
-        if not account_key:
-            return json_response(500, error="Storage account key not configured")
+    filename = doc.get("filename", "document")
+    sas_url = blob_storage.generate_sas_url(blob_path, expiry_hours=1, disposition=f'inline; filename="{filename}"')
 
-        sas_token = generate_blob_sas(
-            account_name=blob_service_client.account_name,
-            container_name=container_name,
-            blob_name=blob_path,
-            account_key=account_key,
-            permission=BlobSasPermissions(read=True),
-            expiry=datetime.utcnow() + timedelta(hours=1),
-            start=datetime.utcnow() - timedelta(minutes=5)
-        )
-        
-        sas_url = f"https://{blob_service_client.account_name}.blob.core.windows.net/{container_name}/{blob_path}?{sas_token}"
-        logger.info(f"Generated SAS URL for {blob_path}")
-        
+    if sas_url:
         return func.HttpResponse(
             status_code=302,
             headers={
                 "Location": sas_url,
                 "Access-Control-Expose-Headers": "Location",
                 "Access-Control-Allow-Origin": req.headers.get("Origin", "*"),
-                "Access-Control-Allow-Credentials": "true"
-            }
+                "Access-Control-Allow-Credentials": "true",
+            },
         )
-        
-    except Exception as e:
-        logger.error(f"Error generating SAS URL: {str(e)}", exc_info=True)
-        return json_response(500, error=f"Failed to access document: {str(e)}")
-    
-    
+
+    try:
+        file_content, content_type = blob_storage.download_file(blob_path)
+    except FileNotFoundError:
+        return json_response(404, error="File not found in storage")
+
+    return func.HttpResponse(
+        body=file_content, status_code=200,
+        headers={
+            "Content-Type": content_type or doc.get("content_type", "application/octet-stream"),
+            "Content-Disposition": f'inline; filename="{filename}"',
+            "Content-Length": str(len(file_content)),
+            "Access-Control-Expose-Headers": "Content-Disposition, Content-Length",
+        },
+    )
+
+
 @app.route(route="documents/{documentId}/download", methods=["GET"])
 def download_original(req: func.HttpRequest) -> func.HttpResponse:
     user, error = authenticate_request(req)
@@ -2667,3 +2578,79 @@ def billing_usage_endpoint(req: func.HttpRequest) -> func.HttpResponse:
     if error:
         return json_response(401, error=error)
     return handle_billing_usage(req, user)
+
+@app.route(route="documents/{documentId}/preview", methods=["GET"])
+def preview_document(req: func.HttpRequest) -> func.HttpResponse:
+    user, error = authenticate_request(req)
+    if error:
+        return json_response(401, error=error)
+    from function_app_pkg.api.preview_document import handle
+    return handle(req, user=_user_dict(user))
+
+
+@app.route(route="auth/accept-invite", methods=["POST"], auth_level=func.AuthLevel.ANONYMOUS)
+def accept_invite_endpoint(req: func.HttpRequest) -> func.HttpResponse:
+    """
+    POST /auth/accept-invite
+    Body: { "token": "...", "password": "..." }  (password only if not using Azure AD)
+    Validates the signed invite token and activates the user.
+    """
+    import hmac, hashlib, base64, json as _json, os
+    from datetime import datetime
+    from function_app_pkg.core.database import update_user
+
+    try:
+        body = req.get_json()
+    except Exception:
+        return json_response(400, error="Invalid JSON body")
+
+    token = body.get("token", "").strip()
+    if not token:
+        return json_response(400, error="token required")
+
+    try:
+        decoded = base64.urlsafe_b64decode(token.encode()).decode()
+        payload_str, sig = decoded.rsplit("||", 1)
+    except Exception:
+        return json_response(400, error="Invalid token format")
+
+    # Verify signature
+    secret = os.getenv("JWT_SECRET", "dev-secret")
+    expected_sig = hmac.new(secret.encode(), payload_str.encode(), hashlib.sha256).hexdigest()
+    if not hmac.compare_digest(sig, expected_sig):
+        return json_response(400, error="Invalid or tampered token")
+
+    try:
+        payload = _json.loads(payload_str)
+    except Exception:
+        return json_response(400, error="Malformed token payload")
+
+    # Check expiry
+    try:
+        exp = datetime.fromisoformat(payload["exp"])
+        if datetime.utcnow() > exp:
+            return json_response(400, error="Invitation has expired. Ask your admin to resend.")
+    except Exception:
+        return json_response(400, error="Token missing expiry")
+
+    user_id = payload.get("user_id")
+    org_id = payload.get("org_id")
+
+    if not user_id or not org_id:
+        return json_response(400, error="Incomplete token payload")
+
+    # Activate user
+    updated = update_user(user_id, {
+        "is_active": True,
+        "invite_accepted_at": datetime.utcnow().isoformat() + "Z",
+    }, org_id)
+
+    if not updated:
+        return json_response(404, error="User not found. Contact your administrator.")
+
+    return json_response(200, data={
+        "accepted": True,
+        "email": payload.get("email"),
+        "org_id": org_id,
+        "message": "Invitation accepted. You can now log in.",
+    })

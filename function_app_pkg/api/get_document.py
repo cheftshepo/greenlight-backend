@@ -24,25 +24,31 @@ def handle(req: func.HttpRequest, user: dict = None) -> func.HttpResponse:
             return json_response(400, error="Document ID is required")
         
         logger.info(f"📖 Fetching document: {doc_id}")
-        
-        # Get document
-        doc = db_get_document(doc_id)
-        
-        if not doc:
-            return json_response(404, error=f"Document not found: {doc_id}")
-        
-        # Check if user has access
+
+        user_org_id = None
         if user:
             if hasattr(user, 'organization_id'):
                 user_org_id = user.organization_id
-            elif isinstance(user, dict) and 'organization_id' in user:
+            elif isinstance(user, dict):
                 user_org_id = user.get('organization_id')
-            else:
-                user_org_id = None
-            
-            if user_org_id and doc.get('organization_id') != user_org_id:
-                logger.warning(f"🚫 Access denied: User org {user_org_id} vs Doc org {doc.get('organization_id')}")
-                return json_response(403, error="You don't have access to this document")
+
+        # Hard block — no org_id on user means no access
+        if not user_org_id:
+            logger.warning("🚫 Access denied: no org_id on user token")
+            return json_response(403, error="Access denied")
+
+        doc = db_get_document(doc_id, org_id=user_org_id)
+
+        if not doc:
+            return json_response(404, error=f"Document not found: {doc_id}")
+
+        # Hard block — doc must belong to user's org, no exceptions
+        if doc.get('organization_id') != user_org_id:
+            logger.warning(
+                f"🚫 Org mismatch: user_org={user_org_id} "
+                f"doc_org={doc.get('organization_id')} doc_id={doc_id}"
+            )
+            return json_response(403, error="Access denied")
         
         # ============================================================
         # ✅ FIXED: Include ALL name fields for UI display
@@ -67,7 +73,13 @@ def handle(req: func.HttpRequest, user: dict = None) -> func.HttpResponse:
             "created_at": doc.get('created_at'),
             "updated_at": doc.get('updated_at'),
             "text_preview": doc.get('extracted_text', '')[:200] + "..." if doc.get('extracted_text') else None,
-            
+            "blob_url": doc.get('blob_url'),
+            "blob_path": doc.get('blob_path'),
+            "blob_container": doc.get('blob_container', 'documents'),
+            "has_original_file": bool(doc.get('blob_path')),
+            "has_corrected_file": doc.get('correction_status') == 'generated',
+            "corrected_blob_path": doc.get('corrected_blob_path'),
+
             # Briefing data
             "briefing": doc.get('briefing'),
             

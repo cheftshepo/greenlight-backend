@@ -8,6 +8,10 @@ File: function_app_pkg/api/user_management.py
 
 import azure.functions as func
 import logging
+import hmac
+import hashlib
+import base64
+import json as _json
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional
 from collections import Counter
@@ -514,8 +518,19 @@ def handle_create_user(req: func.HttpRequest, user) -> func.HttpResponse:
             }
         )
         
-        # TODO: Send invitation email
-        
+        # Send invitation email with a signed token
+        try:
+            _send_invite_email(
+                to_email=email,
+                to_name=name,
+                org_name=org.get('name', 'your organisation'),
+                invited_by=_get_user_attr(user, 'name') or _get_user_attr(user, 'email'),
+                user_id=new_user['id'],
+                org_id=org_id,
+            )
+        except Exception as email_err:
+            logger.warning(f"⚠️ Invite email failed (user still created): {email_err}")
+
         return json_response(201, data={
             'user_id': new_user['id'],
             'email': email,
@@ -1265,8 +1280,72 @@ def handle_get_org_overview(req: func.HttpRequest, user) -> func.HttpResponse:
     except Exception as e:
         logger.error(f"❌ Get org overview failed: {e}", exc_info=True)
         return json_response(500, error=str(e))
-    
 
+
+def _send_invite_email(to_email: str, to_name: str, org_name: str, invited_by: str, user_id: str, org_id: str):
+    """
+    Send an invitation email. Uses Azure Communication Services if configured,
+    falls back to logging the invite link so you can test without email infra.
+    """
+    import os
+
+    # Build a signed invite token (HMAC-SHA256, expires 72h)
+    secret = os.getenv('JWT_SECRET', 'dev-secret')
+    payload = _json.dumps({
+        'user_id': user_id,
+        'org_id': org_id,
+        'email': to_email,
+        'exp': (datetime.utcnow() + timedelta(hours=72)).isoformat(),
+    })
+    sig = hmac.new(secret.encode(), payload.encode(), hashlib.sha256).hexdigest()
+    token = base64.urlsafe_b64encode(f"{payload}||{sig}".encode()).decode()
+
+    frontend_url = os.getenv('FRONTEND_URL', 'https://your-app.com')
+    invite_link = f"{frontend_url}/accept-invite?token={token}"
+
+    logger.info(f"📧 INVITE LINK for {to_email}: {invite_link}")
+
+    # Try Azure Communication Services email if configured
+    acs_conn = os.getenv('AZURE_COMMUNICATION_CONNECTION_STRING')
+    sender = os.getenv('INVITE_SENDER_EMAIL')
+
+    if not acs_conn or not sender:
+        logger.info("ℹ️  AZURE_COMMUNICATION_CONNECTION_STRING or INVITE_SENDER_EMAIL not set — invite link logged above only")
+        return
+
+    try:
+        from azure.communication.email import EmailClient
+        client = EmailClient.from_connection_string(acs_conn)
+        message = {
+            "senderAddress": sender,
+            "recipients": {"to": [{"address": to_email, "displayName": to_name}]},
+            "content": {
+                "subject": f"You've been invited to {org_name} on Greenlight",
+                "plainText": (
+                    f"Hi {to_name},\n\n"
+                    f"{invited_by} has invited you to join {org_name} on the Greenlight Compliance Platform.\n\n"
+                    f"Click the link below to set up your account (expires in 72 hours):\n{invite_link}\n\n"
+                    f"If you didn't expect this invitation, you can ignore this email."
+                ),
+                "html": f"""
+                <div style="font-family:sans-serif;max-width:560px;margin:0 auto">
+                  <h2 style="color:#1e40af">You've been invited to {org_name}</h2>
+                  <p>{invited_by} has invited you to join <strong>{org_name}</strong> on the Greenlight Compliance Platform.</p>
+                  <a href="{invite_link}" style="display:inline-block;padding:12px 24px;background:#1e40af;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;margin:16px 0">
+                    Accept Invitation
+                  </a>
+                  <p style="color:#666;font-size:13px">This link expires in 72 hours. If you didn't expect this, ignore this email.</p>
+                </div>"""
+            }
+        }
+        poller = client.begin_send(message)
+        result = poller.result()
+        logger.info(f"✅ Invite email sent to {to_email}: {result.get('id')}")
+    except ImportError:
+        logger.warning("azure-communication-email not installed. Run: pip install azure-communication-email")
+    except Exception as e:
+        logger.error(f"❌ Email send failed: {e}")
+        raise
 
 
 def handle_list_org_members(req: func.HttpRequest, user) -> func.HttpResponse:
